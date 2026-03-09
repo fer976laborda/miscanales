@@ -5,58 +5,180 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mis Canales - Fernando</title>
   <style>
+    :root {
+      color-scheme: dark;
+    }
+
     body {
       background-color: #0d0d0d;
       color: #f1c40f;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
       margin: 0;
+      padding: 24px 16px 48px;
     }
 
     h1 {
-      margin-bottom: 40px;
+      margin: 0 0 24px;
       font-size: 2rem;
       text-align: center;
     }
 
-    .boton {
+    .intro {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 28px;
+      color: #f8df6f;
+    }
+
+    .canales {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      gap: 24px;
+    }
+
+    .canal {
+      background-color: #181818;
+      border: 1px solid #f1c40f55;
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 0 14px #00000055;
+    }
+
+    .canal h2 {
+      margin: 0 0 14px;
+      font-size: 1.4rem;
+    }
+
+    .boton-canal {
+      display: inline-block;
       background-color: #1a1a1a;
       border: 2px solid #f1c40f;
       color: #f1c40f;
-      padding: 15px 30px;
-      margin: 10px;
-      font-size: 1rem;
-      cursor: pointer;
+      padding: 10px 18px;
+      margin-bottom: 18px;
+      font-size: 0.95rem;
       text-decoration: none;
       border-radius: 8px;
-      transition: all 0.3s ease-in-out;
+      transition: all 0.25s ease-in-out;
     }
 
-    .boton:hover {
+    .boton-canal:hover {
       background-color: #f1c40f;
       color: #0d0d0d;
-      transform: scale(1.05);
-      box-shadow: 0 0 10px #f1c40f;
+      transform: translateY(-1px);
     }
 
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .videos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+
+    .video {
+      margin: 0;
+      background: #111;
+      border: 1px solid #f1c40f33;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .video h3 {
+      font-size: 0.95rem;
+      line-height: 1.35;
+      margin: 10px 10px 0;
+      color: #ffe79a;
+      min-height: 2.6em;
+    }
+
+    .video iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
-  <h1>🎬 ¡Descubre mis canales de YouTube y elige tu favorito! 🚀</h1>
-  <div class="container">
-    <a class="boton" href="https://www.youtube.com/@SaludyRecetasMundiales" target="_blank">🥗 Salud y Recetas Mundiales</a>
-    <a class="boton" href="https://www.youtube.com/@Tecnopclaborda" target="_blank">💻 Mundo PC Laborda</a>
-    <a class="boton" href="https://www.youtube.com/@EditaVideosyDisenaFacil" target="_blank">🎨 Edita Videos y Diseña Fácil</a>
-    <a class="boton" href="https://www.youtube.com/@IAFacilyPractica" target="_blank">🤖 IA Fácil y Práctica</a>
-  </div>
+  <h1>🎬 Mis canales y vídeos destacados</h1>
+  <p class="intro">Aquí puedes entrar a cada canal y ver 3 vídeos recomendados de cada uno, todo en una sola página.</p>
+
+  <main class="canales">
+    <section class="canal" id="salud-recetas">
+      <h2>🥗 Salud y Recetas Mundiales</h2>
+      <a class="boton-canal" href="https://www.youtube.com/@SaludyRecetasMundiales" target="_blank" rel="noopener noreferrer">Ir al canal</a>
+      <div class="videos">
+        <figure class="video">
+          <h3>Así nació la raza dominicana (2025)</h3>
+          <iframe src="https://www.youtube.com/embed/owut8SvzJrA" title="Así nació la raza dominicana" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </figure>
+        <figure class="video">
+          <h3>Receta de pestiños fácil (Semana Santa/Navidad)</h3>
+          <iframe src="https://www.youtube.com/embed/qMr8dSo1-VQ" title="Receta de pestiños" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </figure>
+        <figure class="video">
+          <h3>Picapollo dominicano súper crujiente</h3>
+          <iframe src="https://www.youtube.com/embed/4J869MPTu1E" title="Picapollo dominicano" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </figure>
+      </div>
+    </section>
+
+    <section class="canal" id="mundo-pc">
+      <h2>💻 Mundo PC Laborda</h2>
+      <a class="boton-canal" href="https://www.youtube.com/@TecnoPCLaborda" target="_blank" rel="noopener noreferrer">Ir al canal</a>
+      <div class="videos">
+        <figure class="video">
+          <h3>Instalar Windows 7 desde USB en 2026</h3>
+          <iframe src="https://www.youtube.com/embed/rwCijvh9vOA" title="Instalar Windows 7 desde USB" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </figure>
+        <figure class="video">
+          <h3>Actualizar drivers de PC o laptop gratis</h3>
+          <iframe src="https://www.youtube.com/embed/d9ktGfzznuk" title="Actualizar drivers gratis" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </figure>
+        <figure class="video">
+          <h3>Mejor conversor gratis 2025 (AVI/MP4/MKV/DVD)</h3>
+          <iframe src="https://www.youtube.com/embed/EpfMR3XPpDQ" title="Mejor conversor gratis 2025" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </figure>
+      </div>
+    </section>
+
+    <section class="canal" id="ia-facil">
+      <h2>🤖 IA Fácil y Práctica</h2>
+      <a class="boton-canal" href="https://www.youtube.com/@IAFacilyPractica" target="_blank" rel="noopener noreferrer">Ir al canal</a>
+      <div class="videos">
+        <figure class="video">
+          <h3>Eliminar marcas de agua gratis en vídeos</h3>
+          <iframe src="https://www.youtube.com/embed/E8N1tPEacuM" title="Eliminar marcas de agua" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </figure>
+        <figure class="video">
+          <h3>Clonar disco a SSD/NVMe y acelerar tu PC</h3>
+          <iframe src="https://www.youtube.com/embed/4KETNvLXtDw" title="Clonar disco a SSD o NVMe" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </figure>
+        <figure class="video">
+          <h3>Convertir CDs a MP3 sin instalar programas</h3>
+          <iframe src="https://www.youtube.com/embed/QVV_2kGl_xc" title="Convertir CDs a MP3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </figure>
+      </div>
+    </section>
+
+    <section class="canal" id="edita-disena">
+      <h2>🎨 Edita Videos y Diseña Fácil</h2>
+      <a class="boton-canal" href="https://www.youtube.com/@EditaVideosyDisenaFacil" target="_blank" rel="noopener noreferrer">Ir al canal</a>
+      <div class="videos">
+        <figure class="video">
+          <h3>Instalar impresoras HP 2700e/2722e por Wi‑Fi</h3>
+          <iframe src="https://www.youtube.com/embed/t22lsPvq0ZI" title="Instalar impresoras HP por WiFi" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </figure>
+        <figure class="video">
+          <h3>Actualizar drivers al 100% (método recomendado)</h3>
+          <iframe src="https://www.youtube.com/embed/XKhMnIp7b_s" title="Actualizar drivers recomendado" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </figure>
+        <figure class="video">
+          <h3>Activar corrector en LibreOffice (solución)</h3>
+          <iframe src="https://www.youtube.com/embed/WZuT44F_g3Q" title="Activar corrector en LibreOffice" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </figure>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
